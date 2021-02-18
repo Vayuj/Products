@@ -40,18 +40,18 @@
             <div class="col">
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" formControlName="password1" class="form-control"> 
-                    <span *ngIf="userFormGroup.get('password').touched && userFormGroup.get('password').errors?.required && !userFormGroup.get('password').valid" style="color:red">Field is Required</span>
-                    <span *ngIf="userFormGroup.get('password').errors?.pattern" style="color:red">Password should contain lower, upper, number, special and minimum of 8 characters</span>
+                    <input type="password" id="password1" formControlName="password1" class="form-control"> 
+                    <span *ngIf="userFormGroup.get('password1').touched && userFormGroup.get('password1').errors?.required && !userFormGroup.get('password1').valid" style="color:red">Field is Required</span>
+                    <span *ngIf="userFormGroup.get('password1').errors?.pattern" style="color:red">Password should contain lower, upper, number, special and minimum of 8 characters</span>
                 </div>          
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="confrimPassword">Confirm Password</label>
                     <input type="password" id="confirmPassword" formControlName="confirmpass" class="form-control">
-                    <span *ngIf="userFormGroup.get('confirmPassword').touched && userFormGroup.get('confirmPassword').errors?.required && !userFormGroup.get('confirmPassword').valid" style="color:red">Field is Required</span>
-                    <span *ngIf="!userFormGroup.get('confirmPassword').errors?.required && userFormGroup?.get('confirmPassword').touched && userFormGroup.value.password != userFormGroup.value.confirmPassword" style="color: red;">Password does not match</span>
-                    <span *ngIf="userFormGroup.get('confirmPassword').valid && userFormGroup?.get('confirmPassword').touched && userFormGroup.value.password == userFormGroup.value.confirmPassword" style="color: green;">Password Matched</span>
+                    <span *ngIf="userFormGroup.get('confirmpass').touched && userFormGroup.get('confirmpass').errors?.required && !userFormGroup.get('confirmpass').valid" style="color:red">Field is Required</span>
+                    <span *ngIf="!userFormGroup.get('confirmpass').errors?.required && userFormGroup?.get('confirmpass').touched && userFormGroup.value.password1 != userFormGroup.value.confirmpass" style="color: red;">Password does not match</span>
+                    <span *ngIf="userFormGroup.get('confirmpass').valid && userFormGroup?.get('confirmpass').touched && userFormGroup.value.password2 == userFormGroup.value.confirmpass" style="color: green;">Password Matched</span>
                     <!-- {{userFormGroup.get('confirmPassword').valid}} -->
                 </div>           
             </div>

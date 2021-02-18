@@ -46,7 +46,7 @@ export class EditUserComponent implements OnInit {
         city1:this.fb.control(this.usrObj.city1),
         zipcode1:this.fb.control(this.usrObj.zipcode1),
       },
-      {validator: this.MustMatch('password', 'confirmPassword')}
+      {validator: this.MustMatch('password1', 'confirmpass')}
       );
     })
     // this.userFormGroup=this.fb.group({
@@ -69,7 +69,7 @@ export class EditUserComponent implements OnInit {
   editForm(){
     if(this.userFormGroup.valid ){//&& this.userFormGroup.value.password==this.userFormGroup.value.confirmPassword){
       console.log(this.userFormGroup.value);
-      delete this.userFormGroup.confirmPassword;
+      delete this.userFormGroup.confirmpass;
       this.userDataService.updateUser(this.usrObj.id,this.userFormGroup.value).subscribe((data)=>{
         this.userFormGroup.reset();
       this.router.navigate(['/users']);
