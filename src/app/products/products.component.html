@@ -1,0 +1,16 @@
+<div class="my-2">
+    <div class="row">
+        <div class="col-9">
+            <h2>Products List</h2>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-primary" routerLink="/createProduct">Create New Product</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of dataListing">
+            <app-product-card [productCard]="product"></app-product-card>
+        </div>          
+    </div>
+      <!-- /.row -->
+</div>

@@ -1,0 +1,44 @@
+<div class="container my-2">
+    <form [formGroup]="productFormGroup" (ngSubmit)="submitForm()">
+        <h1>Create Product</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" formControlName="name" class="form-control">
+                    <!-- {{productFormGroup.get('name').value}} -->
+                    <!-- {{productFormGroup.get('name').valid}} -->
+                    <!-- {{productFormGroup.get('name').errors}} -->
+                    <span *ngIf="productFormGroup.get('name').touched && productFormGroup.get('name').errors?.required && !productFormGroup.get('name').valid" style="color:red">Field is Required</span>
+                    <span *ngIf="productFormGroup.get('name').errors?.minlength && !productFormGroup.get('name').valid" style="color:red">Minimum Lenght is 5</span>
+                    <span *ngIf="productFormGroup.get('name').errors?.maxlength && !productFormGroup.get('name').valid" style="color:red">Maximum Lenght is 30</span>
+                </div>    
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" formControlName="price" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div clas="row">
+            <div class="form-group">
+                <label for="img">Image</label>
+                <input type="text" id="img" formControlName="image" class="form-control">
+            </div>
+        </div>
+        <div clas="row">
+            <div class="form-group">
+                <label for="desc">Description</label>
+                <textarea id="desc" cols="30" rows="5" formControlName="description" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                 <button class="btn btn-primary">Create</button><!--(click)="submitForm()" | [disabled]="!productFormGroup.valid"-->
+            </div>
+        </div>
+    </form>
+    <!-- {{productFormGroup.valid}}<br>
+    {{productFormGroup.value | json}} -->
+</div>

@@ -1,0 +1,20 @@
+<div class="card h-100" >
+    <a [routerLink]="['/user',userCard.id]">
+      <img src="{{userCard.image}}" class="card-img-top" alt="...">
+    </a>
+    <div class="card-body">
+      <h4 class="card-title">{{userCard.name}}</h4>
+      <p class="card-text">{{userCard.gender}}</p>
+      <div class="row">
+        <div class="col">
+          <a class="btn btn-primary" [routerLink]="['/editUser',userCard.id]">Edit</a>
+        </div>
+        <div class="col">
+          <a class="btn btn-primary" (click)="deleteUserCard(userCard.id)">Delete</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div> -->
+  </div>
