@@ -19,5 +19,8 @@ export class DashBoardComponent implements OnInit {
     this.productService.getAllProducts().subscribe((data:Array<any>)=>{
       this.productDataService = data;
     });
+    this.userService.getAllUsers().subscribe((data:Array<any>)=>{
+      this.userDataService=data;
+    })
   }
 }

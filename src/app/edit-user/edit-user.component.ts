@@ -13,17 +13,17 @@ export class EditUserComponent implements OnInit {
   usrObj:any;
   constructor(private fb:FormBuilder, private userDataService:UserDataService, private router:Router,private activatedRoute:ActivatedRoute) {
     this.userFormGroup=this.fb.group({
-      name:this.fb.control(''),//[Validators.required,Validators.minLength(5),Validators.maxLength(30)]),
-      gender:this.fb.control(''),
-      email:this.fb.control(''),
-      mobile:this.fb.control(''),
-      image:this.fb.control(''),
-      password:this.fb.control('',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-      confirmPassword:this.fb.control('',Validators.required),
-      country:this.fb.control(''),
-      state:this.fb.control(''),
-      city:this.fb.control(''),
-      zipcode:this.fb.control(''),
+      username1:this.fb.control(''),//[Validators.required,Validators.minLength(5),Validators.maxLength(30)]),
+      gender1:this.fb.control(''),
+      email1:this.fb.control(''),
+      mobile1:this.fb.control(''),
+      image1:this.fb.control(''),
+      password1:this.fb.control('',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
+      confirmpass:this.fb.control('',Validators.required),
+      country1:this.fb.control(''),
+      state1:this.fb.control(''),
+      city1:this.fb.control(''),
+      zipcode1:this.fb.control(''),
   })
    }
 
@@ -34,17 +34,17 @@ export class EditUserComponent implements OnInit {
     this.userDataService.getUserById(currentId).subscribe((data)=>{
       this.usrObj=data;
       this.userFormGroup=this.fb.group({
-        name:this.fb.control(this.usrObj.name),//[Validators.required,Validators.minLength(5),Validators.maxLength(30)]),
-        gender:this.fb.control(this.usrObj.gender),
-        email:this.fb.control(this.usrObj.email),
-        mobile:this.fb.control(this.usrObj.mobile),
-        image:this.fb.control(this.usrObj.image),
-        password:this.fb.control(this.usrObj.password,[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-        confirmPassword:this.fb.control('',Validators.required),
-        country:this.fb.control(this.usrObj.country),
-        state:this.fb.control(this.usrObj.state),
-        city:this.fb.control(this.usrObj.city),
-        zipcode:this.fb.control(this.usrObj.zipcode),
+        username1:this.fb.control(this.usrObj.username1),//[Validators.required,Validators.minLength(5),Validators.maxLength(30)]),
+        gender1:this.fb.control(this.usrObj.gender1),
+        email1:this.fb.control(this.usrObj.email1),
+        mobile1:this.fb.control(this.usrObj.mobile1),
+        image1:this.fb.control(this.usrObj.image1),
+        password1:this.fb.control(this.usrObj.password1,[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
+        confirmpass:this.fb.control('',Validators.required),
+        country1:this.fb.control(this.usrObj.country1),
+        state1:this.fb.control(this.usrObj.state1),
+        city1:this.fb.control(this.usrObj.city1),
+        zipcode1:this.fb.control(this.usrObj.zipcode1),
       },
       {validator: this.MustMatch('password', 'confirmPassword')}
       );

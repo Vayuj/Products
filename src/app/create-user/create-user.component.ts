@@ -14,17 +14,17 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userFormGroup=this.fb.group({
-      name:this.fb.control(''),//[Validators.required,Validators.minLength(5),Validators.maxLength(30)]),
-      gender:this.fb.control(''),
-      email:this.fb.control(''),
-      mobile:this.fb.control(''),
-      image:this.fb.control(''),
-      password:this.fb.control('',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-      confirmPassword:this.fb.control('',Validators.required),
-      country:this.fb.control(''),
-      state:this.fb.control(''),
-      city:this.fb.control(''),
-      zipcode:this.fb.control(''),
+      username1:this.fb.control(''),//[Validators.required,Validators.minLength(5),Validators.maxLength(30)]),
+      gender1:this.fb.control(''),
+      email1:this.fb.control(''),
+      mobile1:this.fb.control(''),
+      image1:this.fb.control(''),
+      password1:this.fb.control('',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
+      confirmpass:this.fb.control('',Validators.required),
+      country1:this.fb.control(''),
+      state1:this.fb.control(''),
+      city1:this.fb.control(''),
+      zipcode1:this.fb.control(''),
     },
     {validator: this.MustMatch('password', 'confirmPassword')}
     );
